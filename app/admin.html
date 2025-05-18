@@ -17,8 +17,7 @@
     <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- jQuery and Bootstrap JS -->
+    <!-- jQuery and Bootstrap JS (head for legacy reasons, but best in body) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -28,6 +27,8 @@
         crossorigin="anonymous"></script>
     <!-- Load configuration -->
     <script src="js/config.js"></script>
+    <!-- apiHelper.js must be included if used -->
+    <script src="js/apiHelper.js"></script>
 </head>
 <body>
     <div class="limiter">
@@ -37,6 +38,7 @@
                     <div style="text-align: center; margin-bottom: 20px;">
                         <span id="crowd" style="font-size: 20px;">
                             <strong>Kennettechnologies software & IT solutions</strong>
+                        </span>
                         <br><br>
                         <i style="font-size: 18px;">Admin Console</i>
                     </div>
@@ -82,12 +84,12 @@
         // Handle form submission
         $('#loginForm').on('submit', async function(e) {
             e.preventDefault();
-            
+
             const username = $('#username').val().trim();
             const password = $('#password').val().trim();
 
             if (!username || !password) {
-                showError(config.ERROR_MESSAGES.INVALID_INPUT);
+                showError(config.ERROR_MESSAGES?.INVALID_INPUT || "Please enter username and password.");
                 return;
             }
 
@@ -103,22 +105,22 @@
                 if (response.message === "Login successful") {
                     sessionStorage.setItem(config.AUTH.USER_KEY, username);
                     sessionStorage.setItem(config.AUTH.TOKEN_KEY, response.token || '');
-                    
+
                     const loc = window.location.pathname;
                     const dir = loc.substring(0, loc.lastIndexOf('/'));
                     window.location.href = `http://54.169.99.219${dir}/adminpage.html?user=${username}`;
                 } else {
-                    showError(config.ERROR_MESSAGES.AUTH_ERROR);
+                    showError(config.ERROR_MESSAGES?.AUTH_ERROR || "Authentication failed.");
                 }
             } catch (error) {
-                showError(apiHelper.handleError(error));
+                showError(apiHelper.handleError ? apiHelper.handleError(error) : "An error occurred.");
             }
         });
 
         // Handle browser back/forward cache
         window.addEventListener("pageshow", function(event) {
-            const historyTraversal = event.persisted || 
-                (typeof window.performance != "undefined" && 
+            const historyTraversal = event.persisted ||
+                (typeof window.performance != "undefined" &&
                 window.performance.navigation.type === 2);
             if (historyTraversal) {
                 window.location.reload();
@@ -126,7 +128,7 @@
         });
     </script>
 
-    <!-- Vendor JS -->
+    <!-- Vendor JS (should be at the end for performance) -->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendor/animsition/js/animsition.min.js"></script>
     <script src="vendor/bootstrap/js/popper.js"></script>
