@@ -6,23 +6,334 @@ http://www.tooplate.com/view/2081-solution
 
 */
 
-body
-	{
-		background: #ffffff;
-        font-family: 'Raleway', sans-serif;
-		font-weight: 400;
-        position: relative;
-	}
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+    --gray-color: #95a5a6;
+    --white: #ffffff;
+    --shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
 
-h2, h3, h4
-    {
-        font-weight: bold;
-    }
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
 
-p
-    {
-        line-height: 26px;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.navbar-nav > li > a {
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    padding: 15px 20px !important;
+    transition: var(--transition);
+}
+
+.navbar-nav > li > a:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-default {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-default:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: var(--white);
+}
+
+.btn-warning {
+    background: var(--warning-color);
+    color: var(--white);
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: var(--white);
+}
+
+/* Cards and Sections */
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.section-title p {
+    color: var(--gray-color);
+    font-size: 1.1em;
+}
+
+/* Forms */
+.form-control {
+    height: 50px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: none;
+}
+
+textarea.form-control {
+    height: auto;
+    min-height: 150px;
+}
+
+/* Tables */
+.table {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.table thead th {
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 500;
+    border: none;
+}
+
+.table td, .table th {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.alert-success {
+    background: var(--success-color);
+    color: var(--white);
+}
+
+.alert-warning {
+    background: var(--warning-color);
+    color: var(--white);
+}
+
+.alert-danger {
+    background: var(--danger-color);
+    color: var(--white);
+}
+
+/* Progress Bars */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    background: #eee;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* Icons */
+.icon-box {
+    text-align: center;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.icon-box:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box i {
+    font-size: 40px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 50px 0 30px;
+}
+
+.footer-widget {
+    margin-bottom: 30px;
+}
+
+.footer-widget h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.footer-widget p {
+    color: rgba(255,255,255,0.7);
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .section {
+        padding: 70px 0;
     }
+    
+    .section-title h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 50px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8em;
+    }
+    
+    .navbar-nav > li > a {
+        padding: 10px 15px !important;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
 
 /* start all section */
 #service, #divider, #about, #team, #newsletter,
