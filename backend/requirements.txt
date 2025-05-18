@@ -1,0 +1,13 @@
+Flask==2.3.3
+Flask-CORS==4.0.0
+python-dotenv==1.0.0
+gunicorn==21.2.0
+SQLAlchemy==2.0.20
+psycopg2-binary==2.9.7
+PyJWT==2.8.0
+bcrypt==4.0.1
+requests==2.31.0
+python-dateutil==2.8.2
+pytest==7.4.2
+black==23.7.0
+flake8==6.1.0 
