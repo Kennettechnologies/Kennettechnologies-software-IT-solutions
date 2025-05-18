@@ -14,17 +14,17 @@
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://yourdomain.com/">
+		<meta property="og:url" content="https://kennettechnologies.github.io/Kennettechnologies-software-IT-solutions/">
 		<meta property="og:title" content="Kennettechnologies software & IT solutions - Innovative IT Services & Solutions">
 		<meta property="og:description" content="Kennettechnologies software & IT solutions provides innovative IT services and solutions to help businesses grow and succeed in the digital age.">
-		<meta property="og:image" content="https://yourdomain.com/images/og-image.jpg">
+		<meta property="og:image" content="images/og-image.jpg">
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="https://yourdomain.com/">
+		<meta property="twitter:url" content="https://kennettechnologies.github.io/Kennettechnologies-software-IT-solutions/">
 		<meta property="twitter:title" content="Kennettechnologies software & IT solutions - Innovative IT Services & Solutions">
 		<meta property="twitter:description" content="Kennettechnologies software & IT solutions provides innovative IT services and solutions to help businesses grow and succeed in the digital age.">
-		<meta property="twitter:image" content="https://yourdomain.com/images/og-image.jpg">
+		<meta property="twitter:image" content="images/og-image.jpg">
 
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="images/favicon.png">
@@ -38,115 +38,217 @@
 		<link rel="stylesheet" href="css/magnific-popup.css">
 		<!-- font-awesome -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<!-- Google Fonts with preconnect and fallback -->
+		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="css/style.css" media="all">
-		<!-- Preload critical resources -->
-		<link rel="preload" href="js/jquery.js" as="script">
-		<link rel="preload" href="css/bootstrap.min.css" as="style">
 
 		<style>
-		.company-name {
-			font-family: 'Raleway', sans-serif;
-			font-size: 1.1em;
-			font-weight: 600;
-			color: #333;
+		:root {
+			--primary-color: #2c3e50;
+			--secondary-color: #3498db;
+			--accent-color: #e74c3c;
+			--text-color: #2c3e50;
+			--light-bg: #f8f9fa;
 		}
-		.footer-company-name {
-			font-family: 'Raleway', sans-serif;
-			font-size: 0.9em;
-			font-weight: 500;
-			color: #666;
-		}
-		.contact-company-name {
-			font-family: 'Raleway', sans-serif;
-			font-size: 1.6em;
-			font-weight: 700;
-			margin-bottom: 20px;
-			line-height: 1.4;
-			color: #8B4513;
-			text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-			letter-spacing: 0.5px;
-			text-transform: uppercase;
-		}
-		.contact-company-name strong {
-			color: #D2691E;
-			font-weight: 800;
-			letter-spacing: 0.5px;
-			display: block;
-			margin-bottom: 5px;
-		}
-		.contact-section {
-			padding: 30px 0;
-			background: linear-gradient(to right, #FFF8DC, #FFE4B5);
-			box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-		}
-		.contact-section h2 {
-			margin-bottom: 25px;
-			font-weight: 700;
-		}
-		.contact-section h3 {
-			color: #8B4513;
-			font-size: 1.3em;
-			font-weight: 600;
-			margin-bottom: 20px;
-			text-transform: uppercase;
-			letter-spacing: 0.5px;
-		}
-		.contact-section p {
-			margin-bottom: 15px;
+
+		body {
+			font-family: 'Poppins', sans-serif;
+			color: var(--text-color);
 			line-height: 1.6;
-			color: #5C4033;
-			font-weight: 500;
 		}
-		.contact-description {
-			font-size: 1.15em;
-			color: #5C4033;
-			font-weight: 500;
-			line-height: 1.8;
-			margin-bottom: 25px;
-			font-style: italic;
-			padding: 15px;
-			background: rgba(255,255,255,0.5);
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+		.navbar {
+			background: rgba(255, 255, 255, 0.95);
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			padding: 15px 0;
 		}
-		.contact-info {
-			font-size: 1.1em;
-			color: #8B4513;
+
+		.navbar-brand img {
+			max-height: 50px;
+		}
+
+		.navbar-nav > li > a {
 			font-weight: 500;
-			line-height: 2;
-			margin-bottom: 15px;
-			padding: 8px 15px;
-			background: rgba(255,255,255,0.5);
-			border-radius: 5px;
+			color: var(--primary-color) !important;
+			padding: 15px 20px !important;
 			transition: all 0.3s ease;
 		}
-		.contact-info:hover {
-			background: rgba(255,255,255,0.8);
-			transform: translateX(5px);
+
+		.navbar-nav > li > a:hover {
+			color: var(--secondary-color) !important;
 		}
-		.contact-info i {
-			color: #D2691E;
-			margin-right: 15px;
-			font-size: 1.2em;
-			width: 25px;
+
+		#home {
+			position: relative;
+			height: 100vh;
+			background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/slider/1.jpg');
+			background-size: cover;
+			background-position: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			text-align: center;
-			vertical-align: middle;
+			color: white;
 		}
-		address {
-			margin-top: 20px;
+
+		.slider-caption {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			padding: 0 20px;
+		}
+
+		.templatemo_homewrapper h1 {
+			font-size: 3.5em;
+			font-weight: 700;
+			margin-bottom: 20px;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+		}
+
+		.templatemo_homewrapper h2 {
+			font-size: 1.8em;
+			font-weight: 400;
+			margin-bottom: 30px;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+		}
+
+		.btn-default {
+			background: var(--secondary-color);
+			color: white;
+			padding: 12px 30px;
+			border-radius: 30px;
+			border: none;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: all 0.3s ease;
+		}
+
+		.btn-default:hover {
+			background: var(--primary-color);
+			color: white;
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+		}
+
+		#about {
+			padding: 100px 0;
+			background: var(--light-bg);
+		}
+
+		.about-content {
+			padding: 30px;
+			background: white;
+			border-radius: 10px;
+			box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+		}
+
+		.about-content h3 {
+			color: var(--primary-color);
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+
+		.about-content h4 {
+			color: var(--secondary-color);
+			font-weight: 500;
+			margin-bottom: 15px;
+		}
+
+		.portfolio-section {
+			padding: 80px 0;
+		}
+
+		.filter-wrapper {
+			margin-bottom: 30px;
+		}
+
+		.filter-wrapper li a {
+			padding: 8px 20px;
+			border-radius: 20px;
+			margin: 0 5px;
+			transition: all 0.3s ease;
+		}
+
+		.portfolio-thumb {
+			border-radius: 10px;
+			overflow: hidden;
+			margin-bottom: 30px;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		}
+
+		.portfolio-overlay {
+			background: rgba(44, 62, 80, 0.9);
+			padding: 20px;
+		}
+
+		.portfolio-overlay h4 {
+			color: white;
+			font-weight: 500;
+			margin: 0;
+		}
+
+		#contact {
+			padding: 100px 0;
+			background: var(--light-bg);
+		}
+
+		.contact-info {
+			background: white;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+		}
+
+		.contact-info h3 {
+			color: var(--primary-color);
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+
+		.contact-info p {
+			margin-bottom: 15px;
+		}
+
+		.contact-info i {
+			color: var(--secondary-color);
+			margin-right: 10px;
+		}
+
+		footer {
+			background: var(--primary-color);
+			color: white;
+			padding: 30px 0;
+			text-align: center;
+		}
+
+		footer p {
+			margin: 0;
+		}
+
+		@media (max-width: 768px) {
+			.templatemo_homewrapper h1 {
+				font-size: 2.5em;
+			}
+
+			.templatemo_homewrapper h2 {
+				font-size: 1.4em;
+			}
+
+			.navbar-nav > li > a {
+				padding: 10px 15px !important;
+			}
 		}
 		</style>
-
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
-
 		<!-- start navigation -->
-		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+		<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -160,299 +262,154 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#home" class="smoothScroll">HOME</a></li>
 						<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-						<li><a href="#pricing" class="smoothScroll">SERVICES</a></li>
+						<li><a href="#portfolio" class="smoothScroll">PORTFOLIO</a></li>
 						<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
 					</ul>
 				</div>
 			</div>
-		</div>
+		</nav>
 		<!-- end navigation -->
 
 		<!-- start home -->
 		<section id="home" class="text-center">
-		  <div class="templatemo_headerimage">
-		    <div class="flexslider">
-		      <ul class="slides">
-		        <li>
-		        	<img src="images/slider/1.jpg" alt="Slide 1">
-		        	<div class="slider-caption">
-					    <div class="templatemo_homewrapper">
-					      <h1 class="wow fadeInDown" data-wow-delay="2000">Kennettechnologies software & IT solutions</h1>
-					      <h2 class="wow fadeInDown" data-wow-delay="2000">
-							<span>WE CODE &AMP; INTEGRATE SOLUTIONS</span>
-						</h2>
-						<a href="#pricing" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Our Services</a>	
-					    </div>
-				  	</div>
-		        </li>
-		        <li>
-		        	<img src="images/slider/2.jpg" alt="Slide 2">
-		        	<div class="slider-caption">
-					    <div class="templatemo_homewrapper">
-					      <h1 class="wow fadeInDown" data-wow-delay="2000">Innovative IT Solutions</h1>
-					      <h2 class="wow fadeInDown" data-wow-delay="2000">
-							<span>work in all industries and organizations</span>
-						</h2>
-						<a href="#about" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Read about us</a>	
-					    </div>
-				  	</div>
-		        </li>
-		      </ul>
-		    </div>
-		  </div>				
+			<div class="slider-caption">
+				<div class="templatemo_homewrapper">
+					<h1 class="wow fadeInDown" data-wow-delay="0.5s">Kennettechnologies</h1>
+					<h2 class="wow fadeInDown" data-wow-delay="0.8s">Innovative IT Solutions for Your Business</h2>
+					<a href="#about" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="1.1s">Discover More</a>
+				</div>
+			</div>
 		</section>
 		<!-- end home -->
 
 		<!-- start about -->
-		<div id="about">
+		<section id="about">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.9s">
-						<h3>Check Your Project Progress</h3>
-						<h4>Your projects are in good hands</h4>
-						<p>Best Solutions for your needs.
-						 Specialized IT solutions catered to understand employee performance and enhance business capabilities.
-						  </p>
-						  <a href="app.html" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">Log in here</a>
+						<div class="about-content">
+							<h3>Welcome to Kennettechnologies</h3>
+							<h4>Your Trusted IT Partner</h4>
+							<p>We provide cutting-edge IT solutions tailored to your business needs. Our team of experts is dedicated to delivering high-quality services that drive growth and efficiency.</p>
+							<p>Specialized IT solutions catered to understand employee performance and enhance business capabilities.</p>
+							<a href="app.html" class="btn btn-default">Get Started</a>
+						</div>
 					</div>
 					<div class="col-md-6 col-sm-6 wow fadeInRight" data-wow-delay="0.9s">
-						<ul class="filter-wrapper clearfix">
-							<li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
-							<li><a href="#" class="opc-main-bg" data-filter=".graphic">Graphic</a></li>
-							<li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
-						<li><a href="#" class="opc-main-bg" data-filter=".wallpaper">Wallpaper</a></li>
-						</ul>
-
-						<div class="iso-box-section">
-							<div class="iso-box-wrapper col4-iso-box">
-
-								<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/2.jpg" class="fluid-img" alt="portfolio img">
-											<div class="portfolio-overlay">
-												<h4>Project title</h4>
-											</div>
-									</div>
-								</div>
-
-								<div class="iso-box graphic wallpaper col-md-4 col-sm-6 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/3.jpg" class="fluid-img" alt="portfolio img">
-											<div class="portfolio-overlay">
-												<h4>Project title</h4>
-											</div>
-									</div>
-								</div>
-
-								<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/3.jpg" class="fluid-img" alt="portfolio img">
-											<div class="portfolio-overlay">
-												<h4>Project title</h4>
-											</div>
-									</div>
-								</div>
-
-								<div class="iso-box graphic col-md-4 col-sm-6 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/4.jpg" class="fluid-img" alt="portfolio img">
-											<div class="portfolio-overlay">
-												<h4>Project title</h4>
-											</div>
-									</div>
-								</div>
-
-								<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/5.jpg" class="fluid-img" alt="portfolio img">
-											<div class="portfolio-overlay">
-												<h4>Project title</h4>
-											</div>
-									</div>
-								</div>
-
-								<div class="iso-box graphic photoshop col-md-4 col-sm-6 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/6.jpg" class="fluid-img" alt="portfolio img">
-											<div class="portfolio-overlay">
-												<h4>Project title</h4>
-											</div>
-									</div>
-								</div>
-
-							</div>
+						<div class="about-content">
+							<h3>Our Services</h3>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-check"></i> Custom Software Development</li>
+								<li><i class="fa fa-check"></i> Web Application Development</li>
+								<li><i class="fa fa-check"></i> Mobile App Development</li>
+								<li><i class="fa fa-check"></i> IT Infrastructure Management</li>
+								<li><i class="fa fa-check"></i> Cloud Solutions</li>
+								<li><i class="fa fa-check"></i> Digital Transformation</li>
+							</ul>
 						</div>
-
-				</div>
-
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- end about -->
 
-		<!-- start divider -->
-		<div id="divider">
+		<!-- start portfolio -->
+		<section id="portfolio" class="portfolio-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-1 col-sm-1"></div>
-					<div class="col-md-8 col-sm-8">
-						<h2 class="wow bounce">We provide <strong>solutions</strong></h2>
-						<h3 class="wow fadeIn" data-wow-delay="0.6s"><mark>Innovative</mark> Team &amp; <mark>Talented</mark> Developers</h3>
-							<p class="wow fadeInUp" data-wow-delay="0.9s">We provide cutting-edge IT solutions tailored to your business needs. Our team of experts is dedicated to delivering high-quality services that drive growth and efficiency. Let us help you transform your ideas into reality with our innovative approach and technical expertise.</p>
+					<div class="col-md-12 text-center">
+						<h2>Our Portfolio</h2>
+						<p>Check out some of our recent projects</p>
 					</div>
-					<div class="col-md-2 col-sm-2"></div>
 				</div>
-			</div>
-		</div>
-		<!-- end divider -->
-
-
-		<!-- start pricing -->
-		<div id="pricing" class="text-center">
-			<div class="container">
 				<div class="row">
-					<div class="col-md-12 wow bounce">
-						<h2>Services</h2>
-					</div>
-					<div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="plan plan_one">
-							<h4 class="plan_title">Infrastructure Upgrade</h4>
-							<ul>
-								<li>$20 per month</li>
-								<li>100GB Storage</li>
-								<li>1,000GB Transfer</li>
-								<li>10 Bootstrap Themes</li>
-								<li>24-hr support</li>
-							</ul>
-							<a href="app.html"><button class="btn btn-warning">SIGN UP</button></a>
+					<div class="col-md-4 col-sm-6">
+						<div class="portfolio-thumb">
+							<img src="images/portfolio-1.jpg" class="img-responsive" alt="portfolio img">
+							<div class="portfolio-overlay">
+								<h4>E-Commerce Platform</h4>
+							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="plan plan_one">
-							<h4 class="plan_title">Analytical Project</h4>
-							<ul>
-								<li>$2000 Team of Professional</li>
-								<li>100GB Storage</li>
-								<li>Data backup and Reporting</li>
-								<li>Business Analytics Applications</li>
-								<li>24-hr support</li>
-							</ul>
-							<a href="app.html"><button class="btn btn-warning">SIGN UP</button></a>
+					<div class="col-md-4 col-sm-6">
+						<div class="portfolio-thumb">
+							<img src="images/portfolio-2.jpg" class="img-responsive" alt="portfolio img">
+							<div class="portfolio-overlay">
+								<h4>Mobile Banking App</h4>
+							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="plan plan_one">
-							<h4 class="plan_title">Digital Marketing</h4>
-							<ul>
-								<li>$20 per month</li>
-								<li>100GB Storage</li>
-								<li>1,000GB Transfer</li>
-								<li>10 Bootstrap Themes</li>
-								<li>24-hr support</li>
-							</ul>
-							<a href="app.html"><button class="btn btn-warning">SIGN UP</button></a>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="plan plan_one">
-							<h4 class="plan_title">SocialMedia Branding</h4>
-							<ul>
-								<li>$20 per month</li>
-								<li>100GB Storage</li>
-								<li>1,000GB Transfer</li>
-								<li>10 Bootstrap Themes</li>
-								<li>24-hr support</li>
-							</ul>
-							<a href="app.html"><button class="btn btn-warning">SIGN UP</button></a>
+					<div class="col-md-4 col-sm-6">
+						<div class="portfolio-thumb">
+							<img src="images/portfolio-3.jpg" class="img-responsive" alt="portfolio img">
+							<div class="portfolio-overlay">
+								<h4>CRM System</h4>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- end pricing -->
+		</section>
+		<!-- end portfolio -->
 
 		<!-- start contact -->
-		<div id="contact" class="contact-section">
+		<section id="contact">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 col-sm-4 wow fadeInLeft" data-wow-delay="0.6s">
-						<h2 class="contact-company-name"><strong>Kennettechnologies</strong> Software & IT solutions</h2>
-						<p class="contact-description">Contact us for further information and we will cater to your needs.</p>
-						<ul class="social-icon">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-						</ul>
+					<div class="col-md-12 text-center">
+						<h2>Contact Us</h2>
+						<p>Get in touch with us for your IT solutions</p>
 					</div>
-					<div class="col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
-						<address>
-							<h3>Visit Office</h3>
-							<p class="contact-info"><i class="fa fa-map-marker too-icon"></i> Mumias-Kakamega, Kenya</p>
-							<p class="contact-info"><i class="fa fa-phone too-icon"></i> +254797369609</p>
-							<p class="contact-info"><i class="fa fa-envelope-o too-icon"></i> kennettechnologies@gmail.com</p>
-						</address>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="contact-info">
+							<h3>Contact Information</h3>
+							<p><i class="fa fa-map-marker"></i> Mumias-Kakamega, Kenya</p>
+							<p><i class="fa fa-phone"></i> +254797369609</p>
+							<p><i class="fa fa-envelope"></i> kennettechnologies@gmail.com</p>
+						</div>
 					</div>
-					<form action="#" method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
-							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<input name="name" type="text" class="form-control" id="name" placeholder="Name">
-							</div>
-							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<input name="email" type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-							<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
-							</div>
-							<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-								<input name="submit" type="submit" class="form-control" id="submit" value="Send">
-							</div>
-					</form>
+					<div class="col-md-6 col-sm-6">
+						<div class="contact-info">
+							<h3>Business Hours</h3>
+							<p><i class="fa fa-clock-o"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+							<p><i class="fa fa-clock-o"></i> Saturday: 10:00 AM - 4:00 PM</p>
+							<p><i class="fa fa-clock-o"></i> Sunday: Closed</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- end contact -->
-		
+
 		<!-- start footer -->
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-sm-7">
-						<p class="footer-company-name">Copyright &copy; 2025 Kennettechnologies software & IT solutions</p>
-					</div>
-					<div class="col-md-4 col-sm-5">
-						<ul class="social-icon">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-pinterest"></a></li>
-							<li><a href="#" class="fa fa-google"></a></li>
-							<li><a href="#" class="fa fa-github"></a></li>
-						</ul>
+					<div class="col-md-12">
+						<p>Copyright © 2024 Kennettechnologies software & IT solutions. All rights reserved.</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 		<!-- end footer -->
 
-
-		<!-- jQuery (required by Bootstrap) -->
+		<!-- jQuery -->
 		<script src="js/jquery.js"></script>
-		<!-- Bootstrap JS Bundle with Popper -->
+		<!-- bootstrap -->
 		<script src="js/bootstrap.min.js"></script>
-		<!-- Isotope for filtering -->
+		<!-- isotope -->
 		<script src="js/isotope.js"></script>
-		<!-- ImagesLoaded (required by Isotope) -->
-    	<script src="js/imagesloaded.min.js"></script>
-    	<!-- WOW.js for animations -->
+		<!-- images loaded -->
+		<script src="js/imagesloaded.min.js"></script>
+		<!-- wow -->
 		<script src="js/wow.min.js"></script>
-		<!-- SmoothScroll for smooth scrolling -->
+		<!-- smoothScroll -->
 		<script src="js/smoothscroll.js"></script>
-		<!-- FlexSlider for sliders -->
+		<!-- jquery flexslider -->
 		<script src="js/jquery.flexslider.js"></script>
-		<!-- Magnific Popup for image popups -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<!-- Custom scripts - loaded last -->
-		<script src="js/custom.js" defer></script>
-		
+		<!-- custom -->
+		<script src="js/custom.js"></script>
 	</body>
 </html>
