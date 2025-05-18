@@ -1,0 +1,8 @@
+Flask==2.2.3
+Flask-Cors==3.0.10
+Flask-SQLAlchemy==3.0.3
+mysql-connector-python==8.0.33
+paypalrestsdk>=1.13.1
+python-dotenv==1.0.0
+gunicorn==20.1.0
+gevent==22.10.2

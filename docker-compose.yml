@@ -1,0 +1,125 @@
+version: '3.8'
+
+services:
+  # Frontend
+  frontend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      - api-gateway
+
+  # API Gateway
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PRODUCT_SERVICE_URL=http://product:5150
+      - CUSTOMER_SERVICE_URL=http://customer:5001
+      - PAYMENT_SERVICE_URL=http://payment:5000
+      - BOOKING_SERVICE_URL=http://booking:5250
+      - ORDER_SERVICE_URL=http://placeorders:5005
+    depends_on:
+      - product
+      - customer
+      - payment
+      - booking
+      - placeorders
+
+  # Microservices
+  product:
+    build:
+      context: ./Product
+      dockerfile: Dockerfile
+    ports:
+      - "5150:5150"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=by_solutions
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - db
+
+  customer:
+    build:
+      context: ./Customer
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=by_solutions
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - db
+
+  payment:
+    build:
+      context: ./Payment
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=by_solutions
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}
+      - PAYPAL_CLIENT_SECRET=${PAYPAL_CLIENT_SECRET}
+    depends_on:
+      - db
+
+  booking:
+    build:
+      context: ./Booking
+      dockerfile: Dockerfile
+    ports:
+      - "5250:5250"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=by_solutions
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - db
+
+  placeorders:
+    build:
+      context: ./placeOrders
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=by_solutions
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - db
+
+  # Database
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=by_solutions
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: 

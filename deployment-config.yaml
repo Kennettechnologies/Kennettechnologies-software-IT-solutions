@@ -1,0 +1,30 @@
+# Production Configuration
+production:
+  environment:
+    DB_USER: ${DB_USER}
+    DB_PASSWORD: ${DB_PASSWORD}
+    RABBITMQ_HOST: rabbitmq
+    MAILGUN_API_KEY: ${MAILGUN_API_KEY}
+    MAILGUN_DOMAIN: ${MAILGUN_DOMAIN}
+    
+  ports:
+    customer: 5000
+    payment: 5001
+    notification: 5672
+    
+  volumes:
+    db_data: /var/lib/mysql
+    
+# Development Configuration
+development:
+  environment:
+    FLASK_ENV: development
+    DEBUG: true
+    
+  ports:
+    customer: 5000
+    payment: 5001
+    notification: 5672
+    
+  volumes:
+    db_data: /var/lib/mysql

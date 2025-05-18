@@ -1,0 +1,16 @@
+{
+  "name": "kennettechnologies-frontend",
+  "version": "1.0.0",
+  "description": "Kennettechnologies software & IT solutions frontend",
+  "scripts": {
+    "start": "serve app",
+    "build": "mkdir -p dist && cp -r app/* dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
+} 
